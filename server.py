@@ -6,7 +6,7 @@ After the app instance is created, the predict router /predict is registered.
 
 from fastapi import FastAPI
 
-from app.routers import predict
+from api.routers import predict
 
 app = FastAPI(title="Salary Prediction API")
 
