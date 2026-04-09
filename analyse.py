@@ -7,7 +7,7 @@ Usage:
 """
 
 import httpx
-import ollama_client as ollama
+from services import ollama_client as ollama
 
 FASTAPI_URL = "http://localhost:8000"
 
