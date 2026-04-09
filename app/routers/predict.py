@@ -1,11 +1,18 @@
-from fastapi import FastAPI, HTTPException
-from .schema import PredictRequest, PredictResponse
-from . import model
+"""
+Salary predictor router. Hit the /predict endpoint with the data science job
+parameters to get a predicted value for the salary.
 
-app = FastAPI(title="Salary Prediction API")
+There is also a dummy /health endpoint to check the server is running.
+""" 
 
+from fastapi import APIRouter, HTTPException
 
-@app.on_event("startup")
+from .. import ml_model as model
+from ..schemas.schema import PredictRequest, PredictResponse
+
+router = APIRouter(prefix="/predict")
+
+@router.on_event("startup")
 def startup():
     try:
         model.load_model()
@@ -14,12 +21,7 @@ def startup():
         print(f"WARNING: {e}")
 
 
-@app.get("/health")
-def health():
-    return {"status": "ok"}
-
-
-@app.post("/predict", response_model=PredictResponse)
+@router.post("", response_model=PredictResponse)
 def predict(request: PredictRequest):
     if model._model is None:
         raise HTTPException(status_code=503, detail="Model not loaded.")
