@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from .schema import PredictRequest, PredictResponse
-from . import model
+from . import model, ollama
 
 app = FastAPI(title="Salary Prediction API")
 
@@ -13,6 +13,9 @@ def startup():
         # Allow the server to start without the model — /predict will return 503
         print(f"WARNING: {e}")
 
+    if not ollama.check_ollama():
+        print(f"WARNING: Ollama not reachable at {ollama.OLLAMA_BASE_URL} — /predict will return 503")
+
 
 @app.get("/health")
 def health():
@@ -23,6 +26,8 @@ def health():
 def predict(request: PredictRequest):
     if model._model is None:
         raise HTTPException(status_code=503, detail="Model not loaded.")
+    if not ollama._available:
+        raise HTTPException(status_code=503, detail="Ollama not available.")
     features = {
         "work_year": request.work_year,
         "experience_level": request.experience_level.value,
@@ -33,4 +38,6 @@ def predict(request: PredictRequest):
         "is_abroad": request.is_abroad,
     }
     salary = model.predict(features)
-    return PredictResponse(predicted_salary_usd=round(salary / 1000) * 1000)
+    rounded_salary = round(salary / 1000) * 1000
+    explanation = ollama.explain_prediction(features, rounded_salary, request.actual_salary_usd)
+    return PredictResponse(predicted_salary_usd=rounded_salary, explanation=explanation)

@@ -45,6 +45,7 @@ class PredictRequest(BaseModel):
     company_location: CompanyLocation
     company_size: CompanySize
     is_abroad: bool
+    actual_salary_usd: int | None = None
 
     model_config = {
         "json_schema_extra": {
@@ -63,3 +64,4 @@ class PredictRequest(BaseModel):
 
 class PredictResponse(BaseModel):
     predicted_salary_usd: int
+    explanation: str
