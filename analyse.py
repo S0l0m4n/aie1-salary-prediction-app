@@ -1,6 +1,6 @@
 """
 Orchestrator script: reads test data from a CSV, calls FastAPI for salary
-predictions, then asks Ollama to analyse the batch of predicted vs. actual salaries.
+predictions, then asks an LLM to analyse the batch of predicted vs. actual salaries.
 
 Expected CSV columns:
     work_year, experience_level, job_title, remote_ratio,
@@ -19,7 +19,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 import httpx
-from services import ollama_client as ollama
+from services import groq_client as llm_client
 
 load_dotenv()
 
@@ -102,24 +102,17 @@ def main():
         sys.exit(1)
     print(f"\nGot {len(results)} predictions.\n")
 
-    print("Asking Ollama for analysis...")
+    print("Asking LLM for analysis...")
     try:
-        analysis = ollama.analyse_predictions(results)
+        analysis = llm_client.analyse_predictions(results)
     except KeyboardInterrupt:
         print("\nCancelled.")
         sys.exit(0)
-    except httpx.TimeoutException:
-        print(f"\nError: Ollama did not respond within {int(ollama.OLLAMA_TIMEOUT)}s. "
-              "Try a smaller dataset or increase OLLAMA_TIMEOUT in services/ollama_client.py.")
-        sys.exit(1)
-    except httpx.ConnectError:
-        print(f"Error: could not connect to Ollama at {ollama.OLLAMA_URL}. Is it running?")
-        sys.exit(1)
-    except httpx.HTTPStatusError as e:
-        print(f"Error: Ollama returned {e.response.status_code}: {e.response.text}")
+    except ValueError as e:
+        print(f"Error: {e}")
         sys.exit(1)
 
-    print(f"\n--- Ollama Analysis ---\n{analysis}\n")
+    print(f"\n--- LLM Analysis ---\n{analysis}\n")
 
 
 if __name__ == "__main__":
