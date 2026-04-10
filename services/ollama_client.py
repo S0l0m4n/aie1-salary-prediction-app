@@ -2,6 +2,7 @@
 Ollama client helpers for salary analysis.
 """
 
+import json
 import httpx
 
 OLLAMA_URL = "http://localhost:11434"
@@ -10,20 +11,12 @@ OLLAMA_MODEL = "llama3.2"
 
 def analyse_predictions(results: list[dict]) -> str:
     """Send a batch of predicted-vs-actual salary results to Ollama and return its analysis."""
-    rows_text = "\n".join(
-        f"- {r['job_title']} ({r['experience_level']}, {r['company_location']}, "
-        f"{r['work_year']}): predicted ${r['predicted_salary_usd']:,}, "
-        f"actual ${r['actual_salary_usd']:,}, "
-        f"error ${r['predicted_salary_usd'] - r['actual_salary_usd']:+,}"
-        for r in results
-    )
-
     prompt = (
         "You are a data analyst reviewing the output of a salary prediction model "
         "trained on data science job data. Here are the predicted vs. actual salaries "
         f"for {len(results)} test cases:\n\n"
-        f"{rows_text}\n\n"
-        "In 3-4 sentences, comment on the model's accuracy, any patterns in the errors "
+        f"{json.dumps(results, indent=2)}\n\n"
+        "Comment on the model's accuracy, any patterns in the errors "
         "(e.g. over/underpredicting certain roles or experience levels), and what might "
         "explain those patterns."
     )

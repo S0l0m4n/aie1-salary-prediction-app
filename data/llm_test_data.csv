@@ -1,0 +1,58 @@
+work_year,experience_level,job_title,remote_ratio,company_location,company_size,is_abroad,salary_in_usd
+2022,MI,Data Analyst,0,CA,M,False,75000
+2022,SE,Research Scientist,50,FR,L,False,93427
+2022,MI,Data Engineer,100,GR,M,False,76940
+2021,EN,Data Scientist,50,IN,L,False,29751
+2022,SE,Data Analyst,100,CA,M,False,61300
+2021,MI,Data Scientist,100,US,M,False,150000
+2021,EN,Data Scientist,50,US,L,False,58000
+2021,MI,Machine Learning Engineer,50,Europe (other),L,False,51064
+2021,SE,Machine Learning Engineer,50,DE,L,False,94564
+2022,SE,Data Engineer,0,US,M,False,54000
+2022,EN,ML Engineer,100,Europe (other),L,False,21983
+2022,EN,Data Analyst,0,CA,M,False,67000
+2021,EX,Director of Data Science,0,US,L,False,250000
+2020,MI,Data Scientist,100,US,M,False,138350
+2022,SE,Data Scientist,0,GB,M,False,104702
+2022,SE,Machine Learning Engineer,100,US,M,False,192600
+2022,SE,Data Scientist,100,US,M,False,210000
+2021,MI,Data Scientist,100,Latin America,L,False,40038
+2021,SE,Data Science Engineer,50,CA,L,False,127221
+2022,EX,Director of Data Science,50,CA,L,False,196979
+2022,MI,Data Analyst,100,ES,M,False,32974
+2020,EN,Data Scientist,0,FR,S,False,51321
+2021,MI,Research Scientist,100,CA,M,False,63810
+2022,SE,Data Analyst,0,US,M,False,132000
+2022,MI,Data Scientist,100,US,M,False,200000
+2021,SE,Data Analytics Manager,0,US,L,False,120000
+2020,SE,Lead Data Scientist,100,US,S,False,190000
+2022,SE,Data Analyst,100,US,M,False,135000
+2021,EN,Data Analyst,100,US,M,False,80000
+2022,EX,Data Engineer,100,US,M,False,324000
+2021,MI,Data Engineer,0,US,M,False,93150
+2021,EN,Data Science Consultant,100,DE,S,False,76833
+2021,SE,Lead Data Analyst,100,US,L,False,170000
+2021,EX,Head of Data,50,Europe (other),L,False,230000
+2022,MI,Machine Learning Scientist,100,US,L,False,160000
+2022,MI,Data Engineer,100,ES,M,False,76940
+2022,MI,Business Data Analyst,50,CA,L,False,70912
+2022,SE,Applied Data Scientist,100,US,L,False,380000
+2021,MI,Data Engineer,100,Europe (other),L,False,28476
+2022,SE,Data Engineer,100,US,M,False,100000
+2022,MI,Data Scientist,0,US,M,False,130000
+2020,EN,Big Data Engineer,100,US,L,False,70000
+2021,MI,Applied Machine Learning Scientist,50,US,L,False,423000
+2021,MI,Data Scientist,100,US,S,False,82500
+2022,SE,Data Analyst,0,US,M,False,115934
+2022,MI,Data Engineer,100,GR,M,False,65949
+2022,MI,Data Engineer,100,GB,M,False,58894
+2021,SE,Data Analytics Engineer,100,DE,L,False,79197
+2020,EX,Data Engineering Manager,50,ES,L,False,79833
+2021,MI,Computer Vision Software Engineer,100,US,S,True,95746
+2021,SE,Data Scientist,50,FR,L,False,53192
+2020,SE,Big Data Engineer,50,GB,M,False,109024
+2022,SE,Data Engineer,100,US,M,False,126000
+2022,MI,Data Engineer,100,GB,M,False,91614
+2022,SE,Data Analyst,100,US,M,False,109280
+2021,SE,Data Engineering Manager,100,US,L,False,174000
+2022,SE,Data Engineer,100,US,M,False,154000
