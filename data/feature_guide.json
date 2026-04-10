@@ -1,0 +1,84 @@
+{
+  "experience_level": {
+    "description": "Seniority level of the role. Higher seniority is generally associated with significantly higher salaries.",
+    "values": {
+      "EN": "Entry-level",
+      "MI": "Mid-level",
+      "SR": "Senior",
+      "EX": "Executive/Director"
+    }
+  },
+  "employment_type": {
+    "description": "Nature of the employment contract.",
+    "values": {
+      "FT": "Full-time",
+      "PT": "Part-time",
+      "CT": "Contract",
+      "FL": "Freelance"
+    }
+  },
+  "remote_ratio": {
+    "description": "Proportion of work done remotely.",
+    "values": {
+      "0": "Fully on-site",
+      "50": "Hybrid",
+      "100": "Fully remote"
+    }
+  },
+  "company_size": {
+    "description": "Size of the employing company, typically correlated with compensation budget.",
+    "values": {
+      "S": "Small",
+      "M": "Medium",
+      "L": "Large"
+    }
+  },
+  "is_abroad": {
+    "description": "Whether the employee resides in a different country from the company location — a proxy for international hiring arrangements, which may involve salary adjustments relative to local market rates.",
+    "values": {
+      "true": "Employee resides in a different country from the company",
+      "false": "Employee and company are in the same country"
+    }
+  },
+  "company_location": {
+    "description": "Geographic region of the company, derived from country code. Countries that appear frequently enough in the dataset are kept as distinct values; less frequent countries are grouped into broader geographic regions to avoid sparse categories.",
+    "values": {
+      "US": "United States",
+      "GB": "United Kingdom",
+      "CA": "Canada",
+      "DE": "Germany",
+      "IN": "India",
+      "FR": "France",
+      "ES": "Spain",
+      "GR": "Greece",
+      "Europe (other)": "Other European countries (IT, NL, CH, PL, etc.)",
+      "Latin America": "Mexico, Brazil, Colombia, Chile, Honduras",
+      "Middle East / Africa": "UAE, Iran, Iraq, Turkey, Nigeria, Kenya",
+      "Asia": "China, Japan, Singapore, Malaysia, Pakistan, Vietnam",
+      "AU & NZ": "Australia and New Zealand"
+    }
+  },
+  "job_title": {
+    "description": "Specific role title within the data science field. Titles range from hands-on technical roles (e.g. Data Engineer, ML Engineer) to managerial/leadership roles (e.g. Head of Data Science, Director of Data Engineering) and specialist roles (e.g. NLP Engineer, Computer Vision Engineer).",
+    "values": [
+      "Data Scientist", "Machine Learning Scientist", "Big Data Engineer",
+      "Product Data Analyst", "Machine Learning Engineer", "Data Analyst",
+      "Lead Data Scientist", "Business Data Analyst", "Lead Data Engineer",
+      "Lead Data Analyst", "Data Engineer", "Data Science Consultant",
+      "BI Data Analyst", "Director of Data Science", "Research Scientist",
+      "Machine Learning Manager", "Data Engineering Manager",
+      "Machine Learning Infrastructure Engineer", "AI Scientist",
+      "Principal Data Scientist", "Data Science Manager", "Head of Data",
+      "Data Analytics Engineer", "Applied Data Scientist",
+      "Marketing Data Analyst", "Cloud Data Engineer", "Financial Data Analyst",
+      "Computer Vision Software Engineer", "Director of Data Engineering",
+      "Data Science Engineer", "Principal Data Engineer",
+      "Machine Learning Developer", "Applied Machine Learning Scientist",
+      "Computer Vision Engineer", "ML Engineer", "Data Analytics Manager",
+      "Head of Data Science", "Data Specialist", "Data Architect",
+      "Finance Data Analyst", "Principal Data Analyst", "Big Data Architect",
+      "Analytics Engineer", "ETL Developer", "Head of Machine Learning",
+      "NLP Engineer", "Lead Machine Learning Engineer", "Data Analytics Lead"
+    ]
+  }
+}

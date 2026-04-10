@@ -65,7 +65,7 @@ def get_predictions(rows: list[dict]) -> list[dict]:
                 "predicted_salary_usd": predicted,
                 "error_usd": error,
             })
-            print(f"  [{i}/{len(rows)}] {row['job_title']:35s}  "
+            print(f"  [{i:2d}/{len(rows)}] {row['job_title']:35s}  "
                   f"predicted: ${predicted:>9,}  "
                   f"actual: ${row['salary_in_usd']:>9,}  "
                   f"error: ${error:>+9,}")
