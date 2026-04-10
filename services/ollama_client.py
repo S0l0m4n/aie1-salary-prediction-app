@@ -3,11 +3,15 @@ Ollama client helpers for salary analysis.
 """
 
 import json
+import sys
+import threading
+import time
 import httpx
 from pathlib import Path
 
 OLLAMA_URL = "http://localhost:11434"
 OLLAMA_MODEL = "llama3.2"
+OLLAMA_TIMEOUT = 120.0  # seconds
 
 _FEATURE_GUIDE_PATH = Path(__file__).parent.parent / "data" / "feature_guide.json"
 
@@ -49,6 +53,25 @@ def analyse_predictions(results: list[dict]) -> str:
         "stream": False,
     }
 
-    response = httpx.post(f"{OLLAMA_URL}/api/chat", json=payload, timeout=60.0)
+    done = threading.Event()
+
+    def _progress():
+        start = time.monotonic()
+        while not done.wait(timeout=1.0):
+            elapsed = int(time.monotonic() - start)
+            remaining = int(OLLAMA_TIMEOUT) - elapsed
+            sys.stdout.write(f"\r  Waiting for LLM... {elapsed}s elapsed, {remaining}s remaining  ")
+            sys.stdout.flush()
+        sys.stdout.write("\r" + " " * 60 + "\r")
+        sys.stdout.flush()
+
+    progress_thread = threading.Thread(target=_progress, daemon=True)
+    progress_thread.start()
+    try:
+        response = httpx.post(f"{OLLAMA_URL}/api/chat", json=payload, timeout=OLLAMA_TIMEOUT)
+    finally:
+        done.set()
+        progress_thread.join()
+
     response.raise_for_status()
     return response.json()["message"]["content"]

@@ -91,6 +91,9 @@ def main():
     print("Fetching predictions from FastAPI...")
     try:
         results = get_predictions(rows)
+    except KeyboardInterrupt:
+        print("\nCancelled.")
+        sys.exit(0)
     except httpx.ConnectError:
         print(f"Error: could not connect to FastAPI at {FASTAPI_URL}. Is it running?")
         sys.exit(1)
@@ -102,6 +105,13 @@ def main():
     print("Asking Ollama for analysis...")
     try:
         analysis = ollama.analyse_predictions(results)
+    except KeyboardInterrupt:
+        print("\nCancelled.")
+        sys.exit(0)
+    except httpx.TimeoutException:
+        print(f"\nError: Ollama did not respond within {int(ollama.OLLAMA_TIMEOUT)}s. "
+              "Try a smaller dataset or increase OLLAMA_TIMEOUT in services/ollama_client.py.")
+        sys.exit(1)
     except httpx.ConnectError:
         print(f"Error: could not connect to Ollama at {ollama.OLLAMA_URL}. Is it running?")
         sys.exit(1)
