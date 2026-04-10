@@ -1,0 +1,19 @@
+location_map = {
+    'US': 'US', 'GB': 'GB', 'CA': 'CA', 'DE': 'DE', 'IN': 'IN', 'FR': 'FR', 'ES': 'ES', 'GR': 'GR',
+    # Europe (other)
+    'IT': 'Europe (other)', 'PT': 'Europe (other)', 'NL': 'Europe (other)', 'BE': 'Europe (other)',
+    'CH': 'Europe (other)', 'AT': 'Europe (other)', 'PL': 'Europe (other)', 'RO': 'Europe (other)',
+    'CZ': 'Europe (other)', 'HU': 'Europe (other)', 'HR': 'Europe (other)', 'DK': 'Europe (other)',
+    'EE': 'Europe (other)', 'SI': 'Europe (other)', 'LU': 'Europe (other)', 'IE': 'Europe (other)',
+    'MT': 'Europe (other)', 'RU': 'Europe (other)', 'UA': 'Europe (other)', 'MD': 'Europe (other)',
+    # Latin America
+    'MX': 'Latin America', 'BR': 'Latin America', 'CO': 'Latin America', 'CL': 'Latin America',
+    'HN': 'Latin America',
+    # Middle East / Africa
+    'AE': 'Middle East / Africa', 'IR': 'Middle East / Africa', 'IQ': 'Middle East / Africa',
+    'TR': 'Middle East / Africa', 'NG': 'Middle East / Africa', 'KE': 'Middle East / Africa',
+    # Asia
+    'CN': 'Asia', 'JP': 'Asia', 'SG': 'Asia', 'MY': 'Asia', 'PK': 'Asia', 'VN': 'Asia',
+    # AU & NZ
+    'AU': 'AU & NZ', 'NZ': 'AU & NZ',
+}

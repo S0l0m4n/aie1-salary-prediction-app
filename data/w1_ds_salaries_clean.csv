@@ -1,0 +1,563 @@
+,work_year,experience_level,job_title,salary_in_usd,remote_ratio,company_location,company_size,is_abroad
+0,2020,MI,Data Scientist,79833,0,DE,L,False
+1,2020,SE,Machine Learning Scientist,260000,0,Asia,S,False
+2,2020,SE,Big Data Engineer,109024,50,GB,M,False
+3,2020,MI,Product Data Analyst,20000,0,Latin America,S,False
+4,2020,SE,Machine Learning Engineer,150000,50,US,L,False
+5,2020,EN,Data Analyst,72000,100,US,L,False
+6,2020,SE,Lead Data Scientist,190000,100,US,S,False
+7,2020,MI,Data Scientist,35735,50,Europe (other),L,False
+8,2020,MI,Business Data Analyst,135000,100,US,L,False
+9,2020,SE,Lead Data Engineer,125000,50,AU & NZ,S,False
+10,2020,EN,Data Scientist,51321,0,FR,S,False
+11,2020,MI,Data Scientist,40481,0,IN,L,False
+12,2020,EN,Data Scientist,39916,0,FR,M,False
+13,2020,MI,Lead Data Analyst,87000,100,US,L,False
+14,2020,MI,Data Analyst,85000,100,US,L,False
+15,2020,MI,Data Analyst,8000,50,Asia,L,False
+16,2020,EN,Data Engineer,41689,100,Asia,S,False
+17,2020,SE,Big Data Engineer,114047,100,GB,S,True
+18,2020,EN,Data Science Consultant,5707,50,IN,M,False
+19,2020,MI,Lead Data Engineer,56000,100,US,M,True
+20,2020,MI,Machine Learning Engineer,43331,0,Asia,M,False
+21,2020,MI,Product Data Analyst,6072,100,IN,L,False
+22,2020,SE,Data Engineer,47899,50,GR,L,False
+23,2020,MI,BI Data Analyst,98000,0,US,M,False
+24,2020,MI,Lead Data Scientist,115000,0,Mid East / Africa,L,False
+25,2020,EX,Director of Data Science,325000,100,US,L,False
+26,2020,EN,Research Scientist,42000,50,Europe (other),L,False
+27,2020,SE,Data Engineer,33511,0,Latin America,S,False
+29,2020,SE,Machine Learning Manager,117104,50,CA,L,False
+30,2020,MI,Data Engineering Manager,59303,100,DE,S,False
+31,2020,EN,Big Data Engineer,70000,100,US,L,False
+32,2020,SE,Data Scientist,68428,100,US,L,True
+33,2020,MI,Research Scientist,450000,0,US,M,False
+34,2020,MI,Data Analyst,46759,50,FR,L,False
+35,2020,MI,Data Engineer,74130,50,Europe (other),L,False
+36,2020,MI,Data Science Consultant,103000,100,US,L,False
+37,2020,EN,Machine Learning Engineer,250000,50,US,L,False
+38,2020,EN,Data Analyst,10000,100,Mid East / Africa,S,False
+39,2020,EN,Machine Learning Engineer,138000,100,US,S,False
+41,2020,EX,Data Engineering Manager,79833,50,ES,L,False
+42,2020,MI,Machine Learning Infrastructure Engineer,50180,0,Europe (other),M,False
+43,2020,MI,Data Engineer,106000,100,US,L,False
+44,2020,MI,Data Engineer,112872,50,GB,L,False
+46,2020,MI,Data Scientist,76958,100,GB,S,False
+47,2020,SE,Data Engineer,188000,100,US,L,False
+48,2020,MI,Data Scientist,105000,100,US,L,False
+49,2020,MI,Data Engineer,70139,50,FR,L,False
+50,2020,EN,Data Analyst,6072,0,IN,S,False
+51,2020,EN,Data Analyst,91000,100,US,L,False
+52,2020,EN,AI Scientist,45896,50,Europe (other),S,False
+53,2020,EN,Data Engineer,54742,100,DE,L,True
+55,2020,SE,Principal Data Scientist,148261,100,DE,M,False
+56,2020,MI,Data Scientist,38776,100,ES,M,False
+57,2020,MI,Data Scientist,118000,100,US,M,False
+58,2020,SE,Data Scientist,120000,50,US,L,False
+59,2020,MI,Data Scientist,138350,100,US,M,False
+60,2020,MI,Data Engineer,110000,100,US,L,False
+61,2020,MI,Data Engineer,130800,100,US,M,True
+63,2020,SE,Data Scientist,412000,100,US,L,False
+64,2020,SE,Machine Learning Engineer,45618,100,Europe (other),S,False
+65,2020,EN,Data Scientist,62726,50,DE,S,False
+66,2020,EN,Data Scientist,49268,0,DE,S,False
+67,2020,SE,Data Science Manager,190200,100,US,M,False
+68,2020,EN,Data Scientist,105000,100,US,S,False
+69,2020,SE,Data Scientist,91237,0,Europe (other),S,False
+70,2020,MI,Data Scientist,62726,50,Europe (other),S,True
+71,2020,MI,Data Scientist,42197,50,FR,S,False
+72,2021,EN,Research Scientist,82528,50,GB,L,False
+73,2021,EX,BI Data Analyst,150000,100,US,L,True
+74,2021,EX,Head of Data,235000,100,US,L,False
+75,2021,SE,Data Scientist,53192,50,FR,L,False
+76,2021,MI,BI Data Analyst,100000,100,US,M,False
+79,2021,EN,Data Analyst,80000,100,US,M,False
+80,2021,SE,Data Analytics Engineer,79197,100,DE,L,False
+81,2021,MI,Data Engineer,140000,100,US,L,False
+82,2021,MI,Applied Data Scientist,54238,50,CA,L,True
+83,2021,MI,Machine Learning Engineer,47282,100,ES,S,False
+84,2021,EX,Director of Data Science,153667,100,Europe (other),L,True
+85,2021,MI,Data Engineer,28476,100,Europe (other),L,False
+86,2021,EN,Data Analyst,59102,50,FR,M,False
+87,2021,MI,Data Analytics Engineer,110000,100,US,L,False
+88,2021,SE,Lead Data Analyst,170000,100,US,L,False
+90,2021,SE,Marketing Data Analyst,88654,100,Europe (other),L,True
+91,2021,EN,Data Science Consultant,76833,100,DE,S,False
+92,2021,MI,Lead Data Analyst,19609,100,IN,L,False
+93,2021,SE,Lead Data Engineer,276000,0,US,L,False
+94,2021,EN,Data Scientist,29751,50,IN,L,False
+95,2021,MI,Cloud Data Engineer,89294,50,Asia,L,False
+97,2021,MI,Financial Data Analyst,450000,100,US,L,False
+98,2021,EN,Computer Vision Software Engineer,70000,100,US,M,False
+99,2021,MI,Computer Vision Software Engineer,95746,100,US,S,True
+100,2021,MI,Data Analyst,75000,0,US,L,False
+101,2021,SE,Data Engineer,150000,100,US,L,False
+102,2021,MI,BI Data Analyst,36259,50,US,L,True
+103,2021,MI,Data Analyst,62000,0,US,L,False
+104,2021,MI,Data Scientist,73000,0,US,L,False
+105,2021,MI,Data Analyst,51519,50,GB,L,False
+106,2021,MI,Research Scientist,187442,100,CA,L,False
+107,2021,SE,Data Engineer,115000,100,US,S,False
+108,2021,SE,Data Engineer,150000,100,US,M,False
+109,2021,EN,Data Engineer,30428,100,IN,L,False
+110,2021,SE,Machine Learning Engineer,94564,50,DE,L,False
+111,2021,SE,Director of Data Engineering,113476,100,GB,M,False
+112,2021,SE,Lead Data Engineer,103160,100,GB,S,False
+114,2021,MI,Data Engineer,45391,100,Europe (other),L,False
+115,2021,EN,Machine Learning Scientist,225000,100,US,L,False
+116,2021,MI,Data Scientist,50000,100,Mid East / Africa,L,False
+117,2021,MI,Data Science Engineer,40189,100,GR,M,False
+118,2021,EN,Data Analyst,90000,100,US,S,False
+119,2021,MI,Data Engineer,200000,100,US,L,False
+120,2021,MI,Big Data Engineer,60000,50,Europe (other),M,True
+121,2021,SE,Principal Data Engineer,200000,100,US,M,False
+122,2021,EN,Data Analyst,50000,100,US,M,False
+123,2021,EN,Applied Data Scientist,110037,0,GB,L,False
+125,2021,MI,Principal Data Scientist,151000,100,US,L,False
+126,2021,SE,Machine Learning Scientist,120000,50,US,S,False
+127,2021,MI,Data Scientist,9466,0,IN,S,False
+128,2021,EN,Machine Learning Engineer,20000,100,IN,S,False
+129,2021,SE,Lead Data Scientist,40570,50,IN,L,False
+130,2021,EN,Machine Learning Developer,100000,50,Mid East / Africa,S,False
+131,2021,EN,Data Scientist,49646,50,FR,M,False
+132,2021,MI,Applied Machine Learning Scientist,38400,100,US,M,True
+133,2021,SE,Computer Vision Engineer,24000,100,Latin America,M,False
+134,2021,EN,Data Scientist,100000,0,US,S,False
+135,2021,MI,Data Analyst,90000,100,US,M,False
+136,2021,MI,ML Engineer,63711,50,Asia,S,False
+137,2021,MI,ML Engineer,77364,50,Asia,S,False
+138,2021,SE,Principal Data Scientist,220000,0,US,L,False
+139,2021,EN,Data Scientist,80000,100,US,M,False
+140,2021,MI,Data Analyst,135000,100,US,L,False
+141,2021,SE,Data Science Manager,240000,0,US,L,False
+142,2021,SE,Data Engineering Manager,150000,0,US,L,False
+143,2021,MI,Data Scientist,82500,100,US,S,False
+144,2021,MI,Data Engineer,100000,100,US,L,False
+145,2021,SE,Machine Learning Engineer,82744,50,Europe (other),M,False
+146,2021,MI,Research Scientist,62649,50,FR,M,False
+147,2021,MI,Data Engineer,90000,100,US,L,False
+148,2021,SE,Data Engineering Manager,153000,100,US,L,False
+149,2021,SE,Cloud Data Engineer,160000,100,US,S,True
+150,2021,SE,Director of Data Science,168000,0,Asia,S,False
+151,2021,MI,Data Scientist,150000,100,US,M,False
+152,2021,MI,Data Scientist,75774,100,CA,L,False
+153,2021,EN,Data Scientist,13400,100,Europe (other),L,False
+154,2021,SE,Data Science Manager,144000,100,US,L,False
+155,2021,SE,Data Science Engineer,127221,50,CA,L,False
+157,2021,MI,Applied Machine Learning Scientist,423000,50,US,L,False
+158,2021,SE,Data Analytics Manager,120000,100,US,M,False
+159,2021,EN,Machine Learning Engineer,125000,100,US,S,False
+160,2021,EX,Head of Data,230000,50,Europe (other),L,False
+161,2021,EX,Head of Data Science,85000,0,Europe (other),M,False
+162,2021,MI,Data Engineer,28369,50,Europe (other),L,False
+163,2021,EN,Data Science Consultant,63831,50,DE,L,False
+164,2021,EX,Director of Data Science,130026,50,DE,M,False
+165,2021,SE,Data Specialist,165000,100,US,L,False
+166,2021,EN,Data Engineer,80000,100,US,L,False
+167,2021,EX,Director of Data Science,250000,0,US,L,False
+168,2021,EN,BI Data Analyst,55000,50,US,S,False
+169,2021,MI,Data Architect,150000,100,US,L,False
+170,2021,MI,Data Architect,170000,100,US,L,False
+171,2021,MI,Data Engineer,82528,100,GB,L,False
+172,2021,EN,Data Analyst,60000,100,US,S,False
+173,2021,SE,Principal Data Scientist,235000,100,US,L,False
+174,2021,SE,Research Scientist,60757,50,Europe (other),L,False
+175,2021,SE,Data Engineering Manager,174000,100,US,L,False
+176,2021,MI,Data Scientist,2859,0,Latin America,S,False
+177,2021,MI,Data Scientist,40038,100,Latin America,L,False
+178,2021,EN,Machine Learning Engineer,81000,50,US,S,False
+179,2021,MI,Data Scientist,5679,100,US,S,True
+180,2021,MI,Big Data Engineer,22611,0,IN,L,False
+181,2021,MI,Data Scientist,90734,50,DE,L,False
+182,2021,MI,Data Engineer,26005,0,US,L,True
+183,2021,SE,Finance Data Analyst,61896,50,GB,L,False
+185,2021,MI,Data Engineer,4000,100,Mid East / Africa,M,False
+186,2021,SE,Data Analytics Engineer,50000,100,GB,M,True
+187,2021,EX,Data Science Consultant,69741,100,ES,S,True
+188,2021,SE,Data Engineer,76833,50,GB,S,True
+189,2021,MI,Machine Learning Engineer,74000,50,Asia,S,False
+190,2021,SE,Data Science Manager,152000,100,FR,L,True
+191,2021,EN,Machine Learning Engineer,21844,50,Latin America,M,False
+192,2021,MI,Big Data Engineer,18000,0,Europe (other),S,False
+193,2021,SE,Data Science Manager,174000,100,US,L,False
+194,2021,SE,Research Scientist,96113,50,CA,L,False
+195,2021,MI,Data Scientist,147000,50,US,L,False
+196,2021,EN,BI Data Analyst,9272,100,Mid East / Africa,S,False
+197,2021,SE,Machine Learning Engineer,24342,100,IN,L,False
+198,2021,SE,Data Science Manager,54094,50,US,L,True
+199,2021,EN,Data Science Consultant,90000,100,US,S,False
+200,2021,MI,Data Scientist,61467,50,Europe (other),M,True
+201,2021,SE,Machine Learning Infrastructure Engineer,195000,100,US,M,False
+202,2021,MI,Data Scientist,37825,100,ES,L,False
+203,2021,SE,Research Scientist,50000,100,US,S,True
+204,2021,MI,Data Scientist,160000,100,US,L,False
+205,2021,MI,Data Scientist,12901,0,Latin America,S,False
+206,2021,SE,Machine Learning Engineer,200000,100,US,L,False
+207,2021,SE,Data Engineer,165000,0,US,M,False
+209,2021,SE,Data Analytics Manager,120000,0,US,L,False
+210,2021,MI,Machine Learning Engineer,24823,50,Europe (other),L,False
+211,2021,MI,Research Scientist,56738,50,FR,S,False
+213,2021,EN,Big Data Engineer,5882,0,Europe (other),L,True
+214,2021,EN,Machine Learning Engineer,24823,50,DE,M,False
+215,2021,SE,Principal Data Engineer,185000,100,US,L,False
+218,2021,MI,Machine Learning Engineer,88654,100,Europe (other),M,False
+219,2021,SE,Data Analytics Manager,140000,100,US,L,False
+220,2021,MI,Machine Learning Engineer,46597,100,Europe (other),L,False
+221,2021,MI,Data Scientist,116914,50,GB,L,False
+222,2021,MI,Data Scientist,33808,0,IN,M,False
+223,2021,MI,Data Scientist,56256,50,GB,L,False
+224,2021,SE,Machine Learning Scientist,225000,100,CA,L,True
+226,2021,SE,Data Scientist,87738,100,CA,S,False
+227,2021,MI,Data Scientist,88654,50,DE,L,False
+228,2021,SE,Data Scientist,135000,0,US,L,False
+229,2021,SE,Data Analyst,71786,100,CA,M,False
+230,2021,EN,Big Data Engineer,16228,100,IN,L,False
+231,2021,SE,ML Engineer,256000,100,US,S,False
+232,2021,SE,Director of Data Engineering,200000,100,US,L,False
+233,2021,SE,Data Analyst,200000,100,US,L,False
+234,2021,MI,Data Architect,180000,100,US,L,False
+235,2021,MI,Head of Data Science,110000,0,US,S,False
+236,2021,MI,Research Scientist,63810,100,CA,M,False
+237,2021,MI,Data Scientist,46809,100,ES,M,False
+238,2021,EN,Data Scientist,4000,0,Asia,M,False
+239,2021,EN,Data Engineer,21637,50,IN,M,False
+240,2021,SE,Data Scientist,103691,100,CA,L,False
+241,2021,MI,Data Analyst,80000,100,US,L,False
+242,2021,MI,Data Engineer,110000,100,US,L,False
+243,2021,SE,Data Scientist,165000,100,US,L,False
+245,2021,MI,Data Engineer,72212,50,GB,L,False
+246,2021,EN,Data Scientist,36643,50,FR,L,False
+247,2021,MI,Data Engineer,12103,0,Mid East / Africa,M,False
+248,2021,SE,Data Engineer,96282,50,GB,L,False
+249,2021,SE,Principal Data Analyst,170000,100,US,M,False
+250,2021,MI,Data Scientist,115000,50,US,L,False
+251,2021,EN,Data Scientist,90000,100,US,S,False
+252,2021,EX,Principal Data Engineer,600000,100,US,L,False
+253,2021,EN,Data Scientist,28399,100,IN,M,False
+254,2021,MI,Data Analyst,93000,100,US,L,False
+255,2021,SE,Big Data Architect,99703,50,CA,M,False
+256,2021,MI,Data Engineer,200000,100,US,L,False
+257,2021,SE,Principal Data Scientist,173762,100,DE,M,False
+258,2021,SE,Machine Learning Engineer,185000,50,US,L,False
+259,2021,EX,Director of Data Science,141846,0,DE,L,False
+260,2021,MI,Data Scientist,130000,50,US,L,False
+261,2021,SE,Data Analyst,63831,50,DE,L,False
+262,2021,MI,Data Scientist,16904,100,IN,S,False
+263,2021,SE,Machine Learning Engineer,66265,0,IN,L,False
+266,2021,MI,Data Engineer,93150,0,US,M,False
+267,2021,MI,Data Engineer,111775,0,US,M,False
+268,2021,MI,Data Engineer,28016,100,Mid East / Africa,M,False
+269,2021,EN,Data Engineer,65013,50,DE,M,False
+270,2021,EN,Data Engineer,72500,100,US,L,False
+271,2021,SE,Computer Vision Engineer,18907,0,Latin America,M,False
+272,2021,EN,Data Science Consultant,76833,0,DE,L,False
+273,2021,EN,Machine Learning Engineer,85000,100,DE,S,True
+274,2021,SE,Data Scientist,77684,50,FR,M,False
+275,2021,EN,Data Scientist,100000,100,US,M,False
+276,2021,EN,Data Scientist,58000,50,US,L,False
+277,2021,SE,AI Scientist,55000,100,ES,L,False
+278,2021,SE,Data Scientist,20171,50,Mid East / Africa,L,False
+279,2021,EN,Business Data Analyst,59102,100,Europe (other),L,False
+280,2021,MI,Data Engineer,112000,100,US,L,False
+284,2021,MI,Research Scientist,69999,50,Europe (other),L,False
+285,2021,SE,Data Science Manager,94665,50,IN,L,False
+286,2021,SE,Head of Data,102839,100,Europe (other),L,False
+287,2021,MI,Data Scientist,109000,50,US,L,False
+288,2021,MI,Machine Learning Engineer,51064,50,Europe (other),L,False
+289,2022,SE,Data Engineer,135000,100,US,M,False
+290,2022,SE,Data Analyst,155000,100,US,M,False
+291,2022,SE,Data Analyst,120600,100,US,M,False
+292,2022,MI,Data Scientist,130000,0,US,M,False
+293,2022,MI,Data Scientist,90000,0,US,M,False
+294,2022,MI,Data Engineer,170000,100,US,M,False
+295,2022,MI,Data Engineer,150000,100,US,M,False
+296,2022,SE,Data Analyst,102100,100,US,M,False
+297,2022,SE,Data Analyst,84900,100,US,M,False
+298,2022,SE,Data Scientist,136620,100,US,M,False
+299,2022,SE,Data Scientist,99360,100,US,M,False
+300,2022,SE,Data Scientist,117789,0,GB,M,False
+301,2022,SE,Data Scientist,104702,0,GB,M,False
+302,2022,SE,Data Scientist,146000,100,US,M,False
+303,2022,SE,Data Scientist,123000,100,US,M,False
+304,2022,EN,Data Engineer,52351,100,GB,M,False
+305,2022,SE,Data Analyst,99000,0,US,M,False
+306,2022,SE,Data Analyst,116000,0,US,M,False
+307,2022,MI,Data Analyst,106260,0,US,M,False
+308,2022,MI,Data Analyst,126500,0,US,M,False
+309,2022,EX,Data Engineer,242000,100,US,M,False
+310,2022,EX,Data Engineer,200000,100,US,M,False
+311,2022,MI,Data Scientist,65438,0,GB,M,False
+312,2022,MI,Data Scientist,39263,0,GB,M,False
+313,2022,MI,Data Engineer,78526,0,GB,M,False
+314,2022,MI,Data Engineer,52351,0,GB,M,False
+315,2022,SE,Data Scientist,165220,100,US,M,False
+316,2022,EN,Data Engineer,45807,100,GB,M,False
+317,2022,SE,Data Scientist,120160,100,US,M,False
+318,2022,SE,Data Analyst,90320,100,US,M,False
+319,2022,SE,Data Engineer,181940,0,US,M,False
+320,2022,SE,Data Engineer,132320,0,US,M,False
+321,2022,SE,Data Engineer,220110,0,US,M,False
+322,2022,SE,Data Engineer,160080,0,US,M,False
+323,2022,SE,Data Scientist,180000,0,US,L,False
+324,2022,SE,Data Scientist,120000,0,US,L,False
+325,2022,SE,Data Analyst,124190,100,US,M,False
+326,2022,EX,Data Analyst,130000,100,US,M,False
+327,2022,EX,Data Analyst,110000,100,US,M,False
+328,2022,SE,Data Analyst,170000,100,US,M,False
+329,2022,MI,Data Analyst,115500,100,US,M,False
+330,2022,SE,Data Analyst,112900,100,US,M,False
+334,2022,SE,Data Engineer,165400,100,US,M,False
+335,2022,SE,Data Engineer,132320,100,US,M,False
+336,2022,MI,Data Analyst,167000,100,US,M,False
+337,2022,SE,Data Engineer,243900,100,US,M,False
+338,2022,SE,Data Analyst,136600,100,US,M,False
+339,2022,SE,Data Analyst,109280,100,US,M,False
+340,2022,SE,Data Engineer,128875,100,US,M,False
+341,2022,SE,Data Engineer,93700,100,US,M,False
+342,2022,EX,Head of Data Science,224000,100,US,M,False
+343,2022,EX,Head of Data Science,167875,100,US,M,False
+344,2022,EX,Analytics Engineer,175000,100,US,M,False
+345,2022,SE,Data Engineer,156600,100,US,M,False
+346,2022,SE,Data Engineer,108800,0,US,M,False
+347,2022,SE,Data Scientist,95550,0,US,M,False
+348,2022,SE,Data Engineer,113000,0,US,L,False
+349,2022,SE,Data Analyst,135000,100,US,M,False
+350,2022,SE,Data Science Manager,161342,100,US,M,False
+351,2022,SE,Data Science Manager,137141,100,US,M,False
+352,2022,SE,Data Scientist,167000,100,US,M,False
+353,2022,SE,Data Scientist,123000,100,US,M,False
+354,2022,SE,Data Engineer,78526,0,GB,M,False
+355,2022,SE,Data Engineer,65438,0,GB,M,False
+356,2022,SE,Data Scientist,150000,0,US,M,False
+357,2022,SE,Data Scientist,211500,100,US,M,False
+358,2022,SE,Data Architect,192400,100,CA,M,False
+359,2022,SE,Data Architect,90700,100,CA,M,False
+360,2022,SE,Data Analyst,130000,100,CA,M,False
+361,2022,SE,Data Analyst,61300,100,CA,M,False
+362,2022,SE,Data Analyst,130000,100,CA,M,False
+364,2022,SE,Data Engineer,160000,0,US,L,False
+365,2022,SE,Data Scientist,138600,100,US,M,False
+366,2022,SE,Data Engineer,136000,0,US,M,False
+367,2022,MI,Data Analyst,58000,0,US,S,False
+368,2022,EX,Analytics Engineer,135000,100,US,M,False
+369,2022,SE,Data Scientist,170000,100,US,M,False
+370,2022,SE,Data Scientist,123000,100,US,M,False
+371,2022,SE,Machine Learning Engineer,189650,0,US,M,False
+372,2022,SE,Machine Learning Engineer,164996,0,US,M,False
+373,2022,MI,ETL Developer,54957,0,GR,M,False
+374,2022,MI,ETL Developer,54957,0,GR,M,False
+375,2022,EX,Lead Data Engineer,118187,100,CA,S,False
+376,2022,SE,Data Analyst,132000,0,US,M,False
+378,2022,SE,Data Architect,208775,100,US,M,False
+379,2022,SE,Data Architect,147800,100,US,M,False
+380,2022,SE,Data Engineer,136994,100,US,M,False
+381,2022,SE,Data Engineer,101570,100,US,M,False
+382,2022,SE,Data Analyst,128875,100,US,M,False
+383,2022,SE,Data Analyst,93700,100,US,M,False
+384,2022,EX,Head of Machine Learning,79039,50,IN,L,False
+386,2022,EN,Machine Learning Engineer,37300,100,GB,L,False
+387,2022,SE,Data Analyst,164000,0,US,M,False
+388,2022,SE,Data Engineer,155000,100,US,M,False
+389,2022,MI,Machine Learning Engineer,124333,0,GB,M,False
+390,2022,MI,Machine Learning Engineer,98158,0,GB,M,False
+391,2022,MI,AI Scientist,120000,0,US,M,False
+394,2022,SE,Data Analytics Manager,145000,100,US,M,False
+395,2022,SE,Data Analytics Manager,105400,100,US,M,False
+396,2022,MI,Machine Learning Engineer,87932,100,DE,M,True
+397,2022,MI,Data Engineer,117789,0,GB,M,False
+398,2022,SE,Data Scientist,215300,100,US,L,False
+399,2022,SE,Data Scientist,158200,100,US,L,False
+400,2022,SE,Data Engineer,209100,100,US,L,False
+401,2022,SE,Data Engineer,154600,100,US,L,False
+402,2022,SE,Data Analyst,115934,0,US,M,False
+403,2022,SE,Data Analyst,81666,0,US,M,False
+404,2022,SE,Data Engineer,175000,100,US,M,False
+405,2022,MI,Data Engineer,98158,0,GB,M,False
+406,2022,MI,Data Analyst,58000,0,US,S,False
+407,2022,SE,Data Engineer,183600,100,US,L,False
+408,2022,MI,Data Analyst,52351,100,GB,M,False
+409,2022,SE,Data Scientist,180000,100,US,M,False
+410,2022,MI,Data Scientist,71982,0,GB,M,False
+411,2022,MI,Data Scientist,45807,0,GB,M,False
+412,2022,MI,Data Engineer,65949,100,GR,M,False
+413,2022,MI,Data Engineer,49461,100,GR,M,False
+414,2022,MI,Data Engineer,78526,100,GB,M,False
+415,2022,MI,Data Engineer,58894,100,GB,M,False
+416,2022,SE,Data Scientist,260000,100,US,M,False
+418,2022,MI,Data Engineer,63900,0,US,M,False
+419,2022,MI,Machine Learning Scientist,160000,100,US,L,False
+420,2022,MI,Machine Learning Scientist,112300,100,US,L,False
+421,2022,MI,Data Science Manager,241000,100,US,M,False
+422,2022,MI,Data Science Manager,159000,100,US,M,False
+423,2022,SE,Data Scientist,180000,0,US,M,False
+424,2022,SE,Data Scientist,80000,0,US,M,False
+425,2022,MI,Data Engineer,82900,0,US,M,False
+426,2022,SE,Data Engineer,100800,100,US,L,False
+427,2022,MI,Data Engineer,49461,100,ES,M,False
+428,2022,SE,Data Scientist,140400,0,US,L,False
+429,2022,MI,Data Analyst,39263,100,GB,M,False
+430,2022,MI,Data Analyst,43966,100,ES,M,False
+431,2022,MI,Data Analyst,32974,100,ES,M,False
+432,2022,MI,Data Engineer,87932,100,ES,M,False
+433,2022,MI,Data Engineer,76940,100,ES,M,False
+434,2022,MI,Data Engineer,104702,100,GB,M,False
+435,2022,MI,Data Engineer,91614,100,GB,M,False
+436,2022,MI,Data Engineer,65949,100,ES,M,False
+437,2022,MI,Data Engineer,87932,100,GR,M,False
+440,2022,MI,Data Analyst,43966,100,GR,M,False
+441,2022,MI,Data Analyst,32974,100,GR,M,False
+442,2022,MI,Data Engineer,98158,100,GB,M,False
+443,2022,MI,Data Engineer,78526,100,GB,M,False
+444,2022,SE,Data Scientist,215300,0,US,L,False
+445,2022,MI,Data Engineer,76940,100,GR,M,False
+448,2022,SE,Data Engineer,180000,100,US,M,False
+449,2022,EN,ML Engineer,21983,100,Europe (other),L,False
+450,2022,SE,Data Engineer,80000,100,US,M,False
+451,2022,MI,Machine Learning Developer,78791,100,CA,M,False
+452,2022,EX,Director of Data Science,196979,50,CA,L,False
+453,2022,MI,Machine Learning Engineer,120000,100,US,S,False
+454,2022,EN,Computer Vision Engineer,125000,0,US,M,False
+455,2022,MI,NLP Engineer,37236,50,US,L,False
+456,2022,SE,Data Engineer,105000,100,US,M,False
+457,2022,SE,Lead Machine Learning Engineer,87932,0,DE,M,False
+458,2022,MI,Business Data Analyst,18442,100,IN,M,False
+459,2022,MI,Data Scientist,31615,100,IN,L,False
+460,2022,MI,Machine Learning Infrastructure Engineer,58255,50,Europe (other),L,False
+461,2022,EN,Financial Data Analyst,100000,50,US,L,False
+463,2022,EN,Data Scientist,18442,100,IN,M,False
+464,2022,SE,Principal Data Scientist,162674,100,DE,M,False
+465,2022,EN,Data Engineer,120000,100,US,M,False
+466,2022,SE,Research Scientist,144000,50,US,L,False
+467,2022,SE,Data Scientist,104890,100,US,M,False
+468,2022,SE,Data Engineer,100000,100,US,M,False
+469,2022,SE,Data Scientist,140000,100,US,M,False
+470,2022,MI,Data Analyst,135000,100,US,M,False
+471,2022,MI,Data Analyst,50000,100,US,M,False
+472,2022,SE,Data Scientist,220000,100,US,M,False
+473,2022,SE,Data Scientist,140000,100,US,M,False
+474,2022,MI,Data Scientist,183228,0,GB,M,False
+475,2022,MI,Data Scientist,91614,0,GB,M,False
+476,2022,SE,Data Scientist,185100,100,US,M,False
+477,2022,SE,Machine Learning Engineer,220000,100,US,M,False
+478,2022,MI,Data Scientist,200000,100,US,M,False
+479,2022,MI,Data Scientist,120000,100,US,M,False
+480,2022,SE,Machine Learning Engineer,120000,100,Mid East / Africa,S,False
+481,2022,SE,Machine Learning Engineer,65000,100,Mid East / Africa,S,False
+482,2022,EX,Data Engineer,324000,100,US,M,False
+483,2022,EX,Data Engineer,216000,100,US,M,False
+484,2022,SE,Data Engineer,210000,100,US,M,False
+485,2022,SE,Machine Learning Engineer,120000,100,US,M,False
+486,2022,SE,Data Scientist,230000,100,US,M,False
+490,2022,SE,Head of Data,200000,100,US,M,True
+491,2022,MI,Principal Data Analyst,75000,100,CA,S,False
+492,2022,MI,Data Scientist,35590,100,Europe (other),L,False
+493,2022,SE,Machine Learning Developer,78791,100,CA,M,False
+494,2022,SE,Data Scientist,100000,100,US,M,True
+495,2022,MI,Machine Learning Scientist,153000,50,US,M,False
+496,2022,EN,Data Engineer,58035,100,DE,M,True
+497,2022,SE,Data Scientist,165000,100,US,M,False
+498,2022,SE,Research Scientist,93427,50,FR,L,False
+499,2022,EN,Data Scientist,52396,100,CA,L,False
+500,2022,SE,Machine Learning Engineer,62651,100,Europe (other),L,False
+501,2022,MI,Head of Data,32974,100,Europe (other),S,False
+502,2022,EN,Data Scientist,40000,100,Asia,L,True
+503,2022,MI,Machine Learning Engineer,87425,100,AU & NZ,L,False
+504,2022,SE,Data Engineer,115000,100,US,M,False
+505,2022,EN,Data Scientist,86703,50,AU & NZ,M,False
+507,2022,MI,Research Scientist,64849,0,Europe (other),L,False
+508,2022,EN,Research Scientist,120000,100,US,L,False
+509,2022,MI,Applied Data Scientist,157000,100,US,L,False
+510,2022,EN,Computer Vision Software Engineer,150000,100,AU & NZ,S,False
+511,2022,MI,Business Data Analyst,70912,50,CA,L,False
+512,2022,EN,Data Engineer,65000,100,US,S,False
+513,2022,SE,Machine Learning Engineer,71444,100,Europe (other),S,False
+514,2022,EN,Data Analytics Engineer,20000,0,Asia,M,False
+515,2022,MI,Data Scientist,48000,100,US,S,True
+516,2022,SE,Data Science Manager,152500,100,US,M,False
+517,2022,MI,Data Engineer,68147,100,FR,M,False
+518,2022,MI,Data Scientist,122346,0,Europe (other),L,False
+519,2022,SE,Applied Data Scientist,380000,100,US,L,False
+520,2022,MI,Data Scientist,69336,100,CA,M,False
+521,2022,EN,Computer Vision Engineer,10000,100,Europe (other),M,True
+522,2022,MI,Data Analyst,20000,100,GR,S,False
+523,2022,SE,Data Analytics Lead,405000,100,US,L,False
+524,2022,MI,Data Scientist,135000,100,US,L,False
+525,2022,SE,Applied Data Scientist,177000,100,US,L,False
+526,2022,MI,Data Scientist,78000,100,US,M,False
+527,2022,SE,Data Analyst,135000,100,US,M,False
+528,2022,SE,Data Analyst,100000,100,US,M,False
+530,2022,MI,Data Analyst,85000,0,CA,M,False
+531,2022,MI,Data Analyst,75000,0,CA,M,False
+532,2022,SE,Machine Learning Engineer,214000,100,US,M,False
+533,2022,SE,Machine Learning Engineer,192600,100,US,M,False
+534,2022,SE,Data Architect,266400,100,US,M,False
+535,2022,SE,Data Architect,213120,100,US,M,False
+537,2022,SE,Data Engineer,155000,100,US,M,False
+538,2022,MI,Data Scientist,141300,0,US,M,False
+539,2022,MI,Data Scientist,102100,0,US,M,False
+540,2022,SE,Data Analyst,115934,100,US,M,False
+541,2022,SE,Data Analyst,81666,100,US,M,False
+542,2022,MI,Data Engineer,206699,0,US,M,False
+543,2022,MI,Data Engineer,99100,0,US,M,False
+544,2022,SE,Data Engineer,130000,100,US,M,False
+545,2022,SE,Data Engineer,115000,100,US,M,False
+546,2022,SE,Data Engineer,110500,100,US,M,False
+547,2022,SE,Data Engineer,130000,100,US,M,False
+548,2022,SE,Data Analyst,99050,100,US,M,False
+549,2022,SE,Data Engineer,160000,100,US,M,False
+550,2022,SE,Data Scientist,205300,0,US,L,False
+552,2022,SE,Data Scientist,176000,100,US,M,False
+553,2022,SE,Data Scientist,144000,100,US,M,False
+554,2022,SE,Data Engineer,200100,100,US,M,False
+555,2022,SE,Data Engineer,160000,100,US,M,False
+556,2022,SE,Data Engineer,145000,100,US,M,False
+557,2022,SE,Data Engineer,70500,0,US,M,False
+558,2022,SE,Data Scientist,205300,0,US,M,False
+559,2022,SE,Data Scientist,140400,0,US,M,False
+560,2022,SE,Analytics Engineer,205300,0,US,M,False
+561,2022,SE,Analytics Engineer,184700,0,US,M,False
+562,2022,SE,Data Engineer,175100,100,US,M,False
+563,2022,SE,Data Engineer,140250,100,US,M,False
+564,2022,SE,Data Analyst,116150,100,US,M,False
+565,2022,SE,Data Engineer,54000,0,US,M,False
+566,2022,SE,Data Analyst,170000,100,US,M,False
+567,2022,MI,Data Analyst,65438,0,GB,M,False
+568,2022,SE,Data Analyst,80000,100,US,M,False
+569,2022,SE,Data Scientist,140000,100,US,M,False
+570,2022,SE,Data Scientist,210000,100,US,M,False
+571,2022,SE,Data Scientist,140000,100,US,M,False
+572,2022,SE,Data Analyst,100000,100,US,M,False
+573,2022,SE,Data Analyst,69000,100,US,M,False
+574,2022,SE,Data Scientist,210000,100,US,M,False
+575,2022,SE,Data Scientist,140000,100,US,M,False
+576,2022,SE,Data Scientist,210000,100,US,M,False
+577,2022,SE,Data Analyst,150075,100,US,M,False
+578,2022,SE,Data Engineer,100000,100,US,M,False
+579,2022,SE,Data Engineer,25000,100,US,M,False
+580,2022,SE,Data Analyst,126500,100,US,M,False
+581,2022,SE,Data Analyst,106260,100,US,M,False
+582,2022,SE,Data Engineer,220110,100,US,M,False
+583,2022,SE,Data Engineer,160080,100,US,M,False
+584,2022,SE,Data Analyst,105000,100,US,M,False
+585,2022,SE,Data Analyst,110925,100,US,M,False
+586,2022,MI,Data Analyst,45807,0,GB,M,False
+587,2022,SE,Data Scientist,140000,100,US,M,False
+588,2022,SE,Data Analyst,99000,0,US,M,False
+589,2022,SE,Data Analyst,60000,100,US,M,False
+590,2022,SE,Data Architect,192564,100,US,M,False
+591,2022,SE,Data Architect,144854,100,US,M,False
+592,2022,SE,Data Scientist,230000,100,US,M,False
+593,2022,SE,Data Scientist,150000,100,US,M,False
+594,2022,SE,Data Analytics Manager,150260,100,US,M,False
+595,2022,SE,Data Analytics Manager,109280,100,US,M,False
+596,2022,SE,Data Scientist,210000,100,US,M,False
+597,2022,SE,Data Analyst,170000,100,US,M,False
+598,2022,MI,Data Scientist,160000,100,US,M,False
+599,2022,MI,Data Scientist,130000,100,US,M,False
+600,2022,EN,Data Analyst,67000,0,CA,M,False
+601,2022,EN,Data Analyst,52000,0,CA,M,False
+602,2022,SE,Data Engineer,154000,100,US,M,False
+603,2022,SE,Data Engineer,126000,100,US,M,False
+604,2022,SE,Data Analyst,129000,0,US,M,False
+605,2022,SE,Data Analyst,150000,100,US,M,False
+606,2022,MI,AI Scientist,200000,100,US,L,True
