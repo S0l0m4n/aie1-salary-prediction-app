@@ -4,7 +4,7 @@ predictions, then asks Ollama to analyse the batch of predicted vs. actual salar
 
 Expected CSV columns:
     work_year, experience_level, job_title, remote_ratio,
-    company_location, company_size, is_abroad, actual_salary_usd
+    company_location, company_size, is_abroad, salary_in_usd
 
 Usage:
     python analyse.py [path/to/test_data.csv]
@@ -41,7 +41,7 @@ def load_csv(path: Path) -> list[dict]:
             try:
                 row["work_year"] = int(row["work_year"])
                 row["remote_ratio"] = int(row["remote_ratio"])
-                row["actual_salary_usd"] = int(row["actual_salary_usd"])
+                row["salary_in_usd"] = int(row["salary_in_usd"])
                 row["is_abroad"] = row["is_abroad"].strip().lower() in ("true", "1", "yes")
             except (KeyError, ValueError) as e:
                 print(f"Warning: skipping row {i} due to parse error: {e}")
@@ -59,7 +59,7 @@ def get_predictions(rows: list[dict]) -> list[dict]:
             response = client.post("/predict", json=payload)
             response.raise_for_status()
             predicted = response.json()["predicted_salary_usd"]
-            error = predicted - row["actual_salary_usd"]
+            error = predicted - row["salary_in_usd"]
             results.append({
                 **row,
                 "predicted_salary_usd": predicted,
@@ -67,7 +67,7 @@ def get_predictions(rows: list[dict]) -> list[dict]:
             })
             print(f"  [{i}/{len(rows)}] {row['job_title']:35s}  "
                   f"predicted: ${predicted:>9,}  "
-                  f"actual: ${row['actual_salary_usd']:>9,}  "
+                  f"actual: ${row['salary_in_usd']:>9,}  "
                   f"error: ${error:>+9,}")
     return results
 
