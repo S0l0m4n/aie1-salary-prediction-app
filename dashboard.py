@@ -21,7 +21,7 @@ import streamlit as st
 
 ROOT = Path(__file__).parent
 PREDICTIONS_PATH = ROOT / "data" / "dashboard_data.csv"
-ANALYSIS_PATH = ROOT / "analysis.md"
+ANALYSIS_PATH = ROOT / "data" / "llm_analysis.md"
 
 EXPERIENCE_ORDER = ["EN", "MI", "SE", "EX"]
 EXPERIENCE_LABELS = {"EN": "Entry-level", "MI": "Mid-level", "SE": "Senior", "EX": "Executive"}
