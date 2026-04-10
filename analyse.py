@@ -72,6 +72,16 @@ def get_predictions(rows: list[dict]) -> list[dict]:
     return results
 
 
+def write_results_csv(results: list[dict], source_path: Path) -> Path:
+    """Write prediction results to a CSV next to the source file."""
+    out_path = source_path.parent / (source_path.stem + "_output.csv")
+    with open(out_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=results[0].keys())
+        writer.writeheader()
+        writer.writerows(results)
+    return out_path
+
+
 def main():
     default_path = Path(__file__).parent / os.getenv("TEST_DATA_FILE", "data/llm_test_data.csv")
     csv_path = Path(sys.argv[1]) if len(sys.argv) > 1 else default_path
@@ -101,6 +111,9 @@ def main():
         print(f"Error: FastAPI returned {e.response.status_code}: {e.response.text}")
         sys.exit(1)
     print(f"\nGot {len(results)} predictions.\n")
+
+    out_path = write_results_csv(results, csv_path)
+    print(f"Results written to {out_path}\n")
 
     print("Asking LLM for analysis...")
     try:
