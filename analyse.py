@@ -7,11 +7,14 @@ Expected CSV columns:
     company_location, company_size, is_abroad, salary_in_usd
 
 Usage:
-    python analyse.py [path/to/test_data.csv]
+    python analyse.py [path/to/test_data.csv] [--save [path/to/predictions.csv]]
 
-If no path is given it defaults to test_data.csv in the project directory.
+If no path is given it defaults to data/llm_test_data.csv.
+Use --save to write predictions to a CSV (default: data/predictions.csv),
+which is read by the Streamlit dashboard.
 """
 
+import argparse
 import os
 import sys
 import csv
@@ -72,20 +75,30 @@ def get_predictions(rows: list[dict]) -> list[dict]:
     return results
 
 
-def write_results_csv(results: list[dict], source_path: Path) -> Path:
-    """Write prediction results to a CSV next to the source file."""
-    out_path = source_path.parent / (source_path.stem + "_output.csv")
+DEFAULT_SAVE_PATH = Path(__file__).parent / "data/dashboard_data.csv"
+
+
+def write_results_csv(results: list[dict], out_path: Path) -> None:
+    """Write prediction results to a CSV at the given path."""
     with open(out_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=results[0].keys())
         writer.writeheader()
         writer.writerows(results)
-    return out_path
+    print(f"Predictions saved to {out_path}")
 
 
 def main():
-    default_path = Path(__file__).parent / os.getenv("TEST_DATA_FILE", "data/llm_test_data.csv")
-    csv_path = Path(sys.argv[1]) if len(sys.argv) > 1 else default_path
+    root = Path(__file__).parent
+    default_csv = root / os.getenv("TEST_DATA_FILE", "data/llm_test_data.csv")
 
+    parser = argparse.ArgumentParser(description="Run salary predictions and optional LLM analysis.")
+    parser.add_argument("csv", nargs="?", type=Path, default=default_csv,
+                        help="Path to test data CSV (default: data/llm_test_data.csv)")
+    parser.add_argument("--save", nargs="?", const=DEFAULT_SAVE_PATH, type=Path, metavar="PATH",
+                        help="Save predictions to CSV for the dashboard (default: data/predictions.csv)")
+    args = parser.parse_args()
+
+    csv_path = args.csv
     if not csv_path.exists():
         print(f"Error: CSV file not found at {csv_path}")
         print("Provide a path as an argument: python analyse.py path/to/file.csv")
@@ -112,8 +125,9 @@ def main():
         sys.exit(1)
     print(f"\nGot {len(results)} predictions.\n")
 
-    out_path = write_results_csv(results, csv_path)
-    print(f"Results written to {out_path}\n")
+    if args.save:
+        write_results_csv(results, args.save)
+        print()
 
     print("Asking LLM for analysis...")
     try:

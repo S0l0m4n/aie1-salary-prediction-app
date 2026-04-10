@@ -8,3 +8,5 @@ Follow all best practices in software development for project folder structure, 
 Do not spawn unnecessary files. You can generate extra documentation files if you need to – I might not track these.
 
 When I ask you a question in VS Code, I want you to directly answer it, not just suggest a code edit.
+
+Try to keep Git diffs minimal between commits. Only change something that is working when you need to change it to support the new feature, or if the current way of doing it is dragging us down or a much better solution is available.
