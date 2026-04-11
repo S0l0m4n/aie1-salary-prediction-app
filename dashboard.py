@@ -444,4 +444,4 @@ if analysis_text:
     st.divider()
     st.markdown('<p class="section-header">AI Insights</p>', unsafe_allow_html=True)
     with st.container(border=True):
-        st.markdown(analysis_text)
+        st.markdown(analysis_text.replace("$", r"\$"))
