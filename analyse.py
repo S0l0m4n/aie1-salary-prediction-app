@@ -22,11 +22,28 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 import httpx
+from supabase import create_client
 from services import groq_client as llm_client
 
 load_dotenv()
 
 FASTAPI_URL = "http://localhost:8000"
+
+
+def get_envs() -> dict:
+    """Read environment variables into a dict. Exits if required vars are missing."""
+    envs = {
+        "input_data_csv": os.getenv("TEST_DATA_FILE", "data/llm_test_data.csv"),
+        "db_url": os.getenv("SUPABASE_URL"),
+        "db_key": os.getenv("SUPABASE_KEY"),
+        "db_table": os.getenv("SUPABASE_TABLE"),
+    }
+    missing = [k for k, v in envs.items() if v is None]
+    if missing:
+        print(f"Error: missing environment variable(s): {', '.join(missing)}")
+        print("Update them in the .env file.")
+        sys.exit(1)
+    return envs
 
 PREDICT_FIELDS = {
     "work_year", "experience_level", "job_title",
@@ -86,16 +103,25 @@ def write_results_csv(results: list[dict], out_path: Path) -> None:
         writer.writerows(results)
     print(f"Predictions saved to {out_path}")
 
+def write_results_db(results: list[dict], db_url: str, key: str, table: str) -> None:
+    """Insert prediction results into the Supabase table."""
+    client = create_client(db_url, key)
+    client.table(table).insert(results).execute()
+    print(f"Predictions saved to Supabase table '{table}' ({len(results)} rows)")
 
 def main():
     root = Path(__file__).parent
-    default_csv = root / os.getenv("TEST_DATA_FILE", "data/llm_test_data.csv")
+
+    envs = get_envs()
+    default_csv = root / envs["input_data_csv"]
 
     parser = argparse.ArgumentParser(description="Run salary predictions and optional LLM analysis.")
     parser.add_argument("csv", nargs="?", type=Path, default=default_csv,
-                        help="Path to test data CSV (default: data/llm_test_data.csv)")
+                        help="Change path to test data CSV")
     parser.add_argument("--save", nargs="?", const=DEFAULT_SAVE_PATH, type=Path, metavar="PATH",
                         help="Save predictions to CSV for the dashboard (default: data/predictions.csv)")
+    parser.add_argument("--save-db", action="store_true",
+                        help="Insert predictions into the Supabase predictions table")
     args = parser.parse_args()
 
     csv_path = args.csv
@@ -127,7 +153,9 @@ def main():
 
     if args.save:
         write_results_csv(results, args.save)
-        print()
+
+    if args.save_db:
+        write_results_db(results, envs["db_url"], envs["db_key"], envs["db_table"])
 
     print("Asking LLM for analysis...")
     try:
