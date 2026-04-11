@@ -1,7 +1,6 @@
 fastapi
 uvicorn
 catboost
-scikit-learn
 joblib
 pandas
 python-dotenv

@@ -28,8 +28,9 @@ analyse.py → FastAPI (/predict) → CatBoost model
 
 ## Setup
 
+**Set up the Python virtual environment and install dependencies**
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 pip install -r api/requirements.txt
 ```
@@ -40,13 +41,13 @@ Copy `.env.example` to `.env` and fill in your API keys.
 
 **Run the FastAPI server:**
 ```bash
-uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
+uvicorn server:app --reload --host 0.0.0.0 --port 8000
 ```
 Docs available at `http://localhost:8000/docs`.
 
 **Run batch predictions + LLM analysis (requires API server running):**
 ```bash
-python analyse.py --save
+python3 analyse.py --save
 ```
 This reads `data/llm_test_data.csv`, calls `/predict` for each row, runs Groq analysis, and writes `data/dashboard_data.csv`.
 
