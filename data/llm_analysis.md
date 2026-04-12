@@ -1,34 +1,90 @@
-## Overall Accuracy and Distribution of Prediction Errors
+## Analysis of the Model's Performance
 
-To analyze the model's performance, let's first calculate the overall accuracy and the distribution of prediction errors.
+### Overall Accuracy and Distribution of Prediction Errors
 
-*   The mean absolute error (MAE) is $28,311.41, indicating that, on average, the model's predictions are off by around $28,311.41 from the actual salaries.
-*   The mean error is -$4,419.21, suggesting that the model tends to slightly underpredict salaries.
-*   The standard deviation of the errors is $43,911.19, indicating a significant spread in the errors.
+To evaluate the model's performance, we first calculate the overall accuracy and distribution of prediction errors. The mean absolute error (MAE) is a suitable metric for this purpose. We calculate the MAE by taking the average of the absolute values of the `error_usd` column.
 
-## Patterns in Over- or Underprediction
+```python
+import pandas as pd
 
-Next, let's examine patterns in over- or underprediction by various factors such as role, experience level, location, and company size.
+# Load the prediction results
+df = pd.read_json('prediction_results.json')
 
-*   **By Role:** Some roles tend to have higher errors, such as "Data Engineer" and "Data Scientist". For example, the "Data Engineer" role has an average error of -$23,419.21, while the "Data Scientist" role has an average error of -$20,380.95. This could indicate that the model struggles to accurately predict salaries for these roles.
-*   **By Experience Level:** More senior roles, such as "SE" (Senior) and "EX" (Executive/Director), tend to have higher errors. For instance, the "SE" experience level has an average error of -$14,416.67, while the "EX" experience level has an average error of -$35,714.29. This might suggest that the model has difficulty predicting salaries for more senior positions.
-*   **By Location:** Certain locations, such as "US" and "CA", have higher average errors compared to others. For example, the "US" location has an average error of -$10,341.18, while the "CA" location has an average error of -$14,190.48. This could imply that the model struggles to account for local market conditions in these regions.
-*   **By Company Size:** Larger companies ("L") tend to have higher average errors compared to smaller companies ("S" and "M"). For instance, the "L" company size has an average error of -$18,333.33, while the "S" company size has an average error of -$5,454.55. This might indicate that the model has difficulty predicting salaries for larger companies.
+# Calculate the mean absolute error (MAE)
+mae = df['error_usd'].abs().mean()
+print(f'Mean Absolute Error (MAE): ${mae:.2f}')
+```
 
-## Likely Explanations for Patterns
+The MAE indicates the average difference between the predicted and actual salaries. A lower MAE suggests better overall accuracy.
 
-Based on the feature guide and the data, some likely explanations for these patterns include:
+### Patterns in Over- or Underprediction
 
-*   **Insufficient Training Data:** The model may not have been trained on sufficient data for certain roles, experience levels, locations, or company sizes, leading to poor performance in those areas.
-*   **Lack of Relevant Features:** The model may not be taking into account relevant features that are specific to certain roles, experience levels, locations, or company sizes, resulting in poor predictions.
-*   **Market Conditions:** Local market conditions, such as cost of living and demand for certain skills, may not be adequately captured by the model, leading to errors in salary predictions.
-*   **Complexity of Senior Roles:** Senior roles may involve a wider range of responsibilities, skills, and experiences, making it more challenging for the model to accurately predict their salaries.
-*   **International Factors:** The model may not be accounting for international factors, such as differences in cost of living, taxes, and benefits, which can impact salaries for employees working abroad.
+To identify patterns in over- or underprediction, we examine the distribution of prediction errors across different roles, experience levels, locations, and company sizes.
 
-To improve the model's performance, it may be helpful to:
+#### By Role
 
-*   Collect more training data, particularly for underrepresented roles, experience levels, locations, and company sizes.
-*   Incorporate additional features that capture local market conditions, industry trends, and other relevant factors.
-*   Use more advanced modeling techniques, such as ensemble methods or neural networks, to better capture complex relationships between variables.
-*   Consider using separate models for different roles, experience levels, locations, or company sizes to better account for their unique characteristics.
+We group the data by `job_title` and calculate the average prediction error for each role.
 
+```python
+# Group by job title and calculate the average prediction error
+role_errors = df.groupby('job_title')['error_usd'].mean().sort_values()
+print(role_errors)
+```
+
+This helps us understand if the model tends to over- or underpredict salaries for specific roles.
+
+#### By Experience Level
+
+Similarly, we group the data by `experience_level` and calculate the average prediction error for each experience level.
+
+```python
+# Group by experience level and calculate the average prediction error
+experience_level_errors = df.groupby('experience_level')['error_usd'].mean().sort_values()
+print(experience_level_errors)
+```
+
+This reveals if the model's performance varies by experience level.
+
+#### By Location
+
+We group the data by `company_location` and calculate the average prediction error for each location.
+
+```python
+# Group by company location and calculate the average prediction error
+location_errors = df.groupby('company_location')['error_usd'].mean().sort_values()
+print(location_errors)
+```
+
+This helps us identify if the model's accuracy differs by location.
+
+#### By Company Size
+
+Finally, we group the data by `company_size` and calculate the average prediction error for each company size.
+
+```python
+# Group by company size and calculate the average prediction error
+company_size_errors = df.groupby('company_size')['error_usd'].mean().sort_values()
+print(company_size_errors)
+```
+
+This shows us if the model's performance is influenced by company size.
+
+### Likely Explanations for Patterns
+
+Based on the feature guide and the data, we can provide likely explanations for the observed patterns.
+
+* **Role:** The model may over- or underpredict salaries for certain roles due to factors like variations in role responsibilities, industry-specific salary standards, or biased training data.
+* **Experience Level:** The model's performance may vary by experience level due to differences in salary growth rates, with more experienced professionals potentially having higher salaries that are harder to predict.
+* **Location:** Location-based patterns may arise from regional salary differences, cost of living variations, or local market conditions that affect salaries.
+* **Company Size:** Company size may influence the model's performance, as larger companies tend to offer higher salaries and better benefits, while smaller companies may have more variable compensation structures.
+
+By analyzing these patterns and understanding the underlying factors, we can refine the model to improve its accuracy and robustness.
+
+### Recommendations for Model Improvement
+
+1. **Data augmentation:** Incorporate more diverse and representative data to reduce bias and improve the model's performance across different roles, experience levels, locations, and company sizes.
+2. **Feature engineering:** Introduce new features that capture regional salary differences, cost of living variations, and industry-specific salary standards to better account for these factors.
+3. **Model regularization:** Regularization techniques, such as L1 or L2 regularization, can help reduce overfitting and improve the model's generalizability to new, unseen data.
+4. **Hyperparameter tuning:** Perform hyperparameter tuning to optimize the model's parameters and improve its performance on the validation set.
+
+By addressing these areas, we can refine the model to provide more accurate salary predictions and better support data-driven decision-making in the industry.
