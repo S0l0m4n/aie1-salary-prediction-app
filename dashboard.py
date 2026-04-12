@@ -24,7 +24,12 @@ PREDICTIONS_PATH = ROOT / "data" / "dashboard_data.csv"
 ANALYSIS_PATH = ROOT / "data" / "llm_analysis.md"
 
 EXPERIENCE_ORDER = ["EN", "MI", "SE", "EX"]
-EXPERIENCE_LABELS = {"EN": "Entry-level", "MI": "Mid-level", "SE": "Senior", "EX": "Executive"}
+EXPERIENCE_LABELS = {
+    "EN": "Entry-level",
+    "MI": "Mid-level",
+    "SE": "Senior",
+    "EX": "Executive",
+}
 REMOTE_LABELS = {0: "On-site", 50: "Hybrid", 100: "Remote"}
 SIZE_ORDER = ["S", "M", "L"]
 SIZE_LABELS = {"S": "Small", "M": "Medium", "L": "Large"}
@@ -48,7 +53,8 @@ st.set_page_config(
 # Custom CSS
 # ---------------------------------------------------------------------------
 
-st.markdown("""
+st.markdown(
+    """
 <style>
 /* KPI cards */
 .kpi-card {
@@ -97,7 +103,9 @@ st.markdown("""
     line-height: 1.7;
 }
 </style>
-""", unsafe_allow_html=True)
+""",
+    unsafe_allow_html=True,
+)
 
 # ---------------------------------------------------------------------------
 # Data loading
@@ -140,7 +148,9 @@ with st.sidebar:
     st.header("Filters")
     st.caption("Refine all charts below")
 
-    exp_options = [e for e in EXPERIENCE_ORDER if e in df_full["experience_level"].unique()]
+    exp_options = [
+        e for e in EXPERIENCE_ORDER if e in df_full["experience_level"].unique()
+    ]
     selected_exp = st.multiselect(
         "Experience Level",
         options=exp_options,
@@ -179,9 +189,9 @@ if df.empty:
 # ---------------------------------------------------------------------------
 
 st.title("Data Science Salary Dashboard")
-active_filters = sum([
-    bool(selected_exp), bool(selected_loc), bool(selected_size), abroad_only
-])
+active_filters = sum(
+    [bool(selected_exp), bool(selected_loc), bool(selected_size), abroad_only]
+)
 filter_note = f" · {active_filters} filter(s) active" if active_filters else ""
 st.caption(
     f"CatBoost model · {len(df_full)} total predictions · "
@@ -199,7 +209,7 @@ def _card(label: str, value: str, css_class: str = "accent") -> str:
         f'<div class="kpi-card">'
         f'<div class="kpi-label">{label}</div>'
         f'<div class="kpi-value {css_class}">{value}</div>'
-        f'</div>'
+        f"</div>"
     )
 
 
@@ -214,8 +224,12 @@ k1, k2, k3, k4, k5 = st.columns(5)
 k1.markdown(_card("Predictions", f"{len(df)}"), unsafe_allow_html=True)
 k2.markdown(_card("Mean Abs Error", f"${mae:,.0f}"), unsafe_allow_html=True)
 k3.markdown(_card("Model Bias", f"${bias:+,.0f}", bias_class), unsafe_allow_html=True)
-k4.markdown(_card("Median Actual Salary", f"${median_actual:,.0f}"), unsafe_allow_html=True)
-k5.markdown(_card("Within 20%", f"{within_20:.0f}%", within_class), unsafe_allow_html=True)
+k4.markdown(
+    _card("Median Actual Salary", f"${median_actual:,.0f}"), unsafe_allow_html=True
+)
+k5.markdown(
+    _card("Within 20%", f"{within_20:.0f}%", within_class), unsafe_allow_html=True
+)
 
 st.write("")  # breathing room
 
@@ -234,8 +248,10 @@ def style_fig(fig: go.Figure, height: int = 400) -> go.Figure:
         font_family="Inter, system-ui, sans-serif",
         legend=dict(
             orientation="h",
-            yanchor="bottom", y=1.02,
-            xanchor="right", x=1,
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1,
         ),
     )
     return fig
@@ -252,7 +268,9 @@ def grouped_bar(
     grp = (
         data.groupby(group_col)[["salary_in_usd", "predicted_salary_usd"]]
         .mean()
-        .rename(columns={"salary_in_usd": "Actual", "predicted_salary_usd": "Predicted"})
+        .rename(
+            columns={"salary_in_usd": "Actual", "predicted_salary_usd": "Predicted"}
+        )
         .reset_index()
     )
     if order:
@@ -268,17 +286,26 @@ def grouped_bar(
 
     if horizontal:
         fig = px.bar(
-            melted, y=group_col, x="Mean Salary", color="Type",
-            barmode="group", orientation="h",
-            color_discrete_map=PALETTE, title=title,
+            melted,
+            y=group_col,
+            x="Mean Salary",
+            color="Type",
+            barmode="group",
+            orientation="h",
+            color_discrete_map=PALETTE,
+            title=title,
             labels={group_col: "", "Mean Salary": "Mean Salary (USD)", "Type": ""},
         )
         fig.update_xaxes(tickprefix="$", tickformat=",")
     else:
         fig = px.bar(
-            melted, x=group_col, y="Mean Salary", color="Type",
+            melted,
+            x=group_col,
+            y="Mean Salary",
+            color="Type",
             barmode="group",
-            color_discrete_map=PALETTE, title=title,
+            color_discrete_map=PALETTE,
+            title=title,
             labels={group_col: "", "Mean Salary": "Mean Salary (USD)", "Type": ""},
         )
         fig.update_yaxes(tickprefix="$", tickformat=",")
@@ -297,7 +324,8 @@ scatter_df["error_fmt"] = scatter_df["error_usd"].apply(lambda x: f"${x:+,.0f}")
 
 fig_scatter = px.scatter(
     scatter_df,
-    x="salary_in_usd", y="predicted_salary_usd",
+    x="salary_in_usd",
+    y="predicted_salary_usd",
     color="exp_label",
     color_discrete_sequence=px.colors.qualitative.Plotly,
     category_orders={"exp_label": [EXPERIENCE_LABELS[e] for e in EXPERIENCE_ORDER]},
@@ -323,13 +351,16 @@ fig_scatter.update_traces(
 
 # Perfect prediction diagonal
 max_val = max(df["salary_in_usd"].max(), df["predicted_salary_usd"].max()) * 1.06
-fig_scatter.add_trace(go.Scatter(
-    x=[0, max_val], y=[0, max_val],
-    mode="lines",
-    line=dict(color="rgba(255,255,255,0.25)", dash="dash", width=1.5),
-    name="Perfect prediction",
-    hoverinfo="skip",
-))
+fig_scatter.add_trace(
+    go.Scatter(
+        x=[0, max_val],
+        y=[0, max_val],
+        mode="lines",
+        line=dict(color="rgba(255,255,255,0.25)", dash="dash", width=1.5),
+        name="Perfect prediction",
+        hoverinfo="skip",
+    )
+)
 fig_scatter.update_xaxes(tickprefix="$", tickformat=",")
 fig_scatter.update_yaxes(tickprefix="$", tickformat=",")
 style_fig(fig_scatter, height=480)
@@ -352,7 +383,9 @@ with col_a:
         ordered=True,
     )
     fig_exp = grouped_bar(
-        exp_df, "exp_label", "Mean Salary by Experience Level",
+        exp_df,
+        "exp_label",
+        "Mean Salary by Experience Level",
         order=[EXPERIENCE_LABELS[e] for e in EXPERIENCE_ORDER],
     )
     st.plotly_chart(fig_exp, use_container_width=True)
@@ -365,8 +398,11 @@ with col_b:
         .index.tolist()
     )
     fig_loc = grouped_bar(
-        df, "company_location", "Mean Salary by Location",
-        order=loc_order, horizontal=True,
+        df,
+        "company_location",
+        "Mean Salary by Location",
+        order=loc_order,
+        horizontal=True,
     )
     style_fig(fig_loc, height=max(350, len(loc_order) * 45 + 60))
     st.plotly_chart(fig_loc, use_container_width=True)
@@ -382,7 +418,9 @@ with col_c:
     if not us_df.empty:
         us_df["Group"] = us_df["is_abroad"].map({True: "Abroad", False: "US-based"})
         fig_abroad = grouped_bar(
-            us_df, "Group", "Abroad vs US-based  (US Companies)",
+            us_df,
+            "Group",
+            "Abroad vs US-based  (US Companies)",
             order=["US-based", "Abroad"],
         )
         st.plotly_chart(fig_abroad, use_container_width=True)
@@ -391,9 +429,13 @@ with col_c:
 
 with col_d:
     size_df = df.copy()
-    size_order_labels = [SIZE_LABELS[s] for s in SIZE_ORDER if SIZE_LABELS[s] in df["size_label"].values]
+    size_order_labels = [
+        SIZE_LABELS[s] for s in SIZE_ORDER if SIZE_LABELS[s] in df["size_label"].values
+    ]
     fig_size = grouped_bar(
-        size_df, "size_label", "Mean Salary by Company Size",
+        size_df,
+        "size_label",
+        "Mean Salary by Company Size",
         order=size_order_labels,
     )
     st.plotly_chart(fig_size, use_container_width=True)
@@ -406,7 +448,8 @@ col_e, col_f = st.columns(2)
 
 with col_e:
     fig_hist = px.histogram(
-        df, x="error_usd",
+        df,
+        x="error_usd",
         nbins=20,
         title="Prediction Error Distribution",
         labels={"error_usd": "Error (Predicted − Actual, USD)"},
@@ -414,12 +457,16 @@ with col_e:
     )
     fig_hist.add_vline(
         x=0,
-        line_color="rgba(255,255,255,0.4)", line_dash="dash", line_width=1.5,
+        line_color="rgba(255,255,255,0.4)",
+        line_dash="dash",
+        line_width=1.5,
     )
     mean_err = df["error_usd"].mean()
     fig_hist.add_vline(
         x=mean_err,
-        line_color="#f38ba8", line_dash="dot", line_width=2,
+        line_color="#f38ba8",
+        line_dash="dot",
+        line_width=2,
         annotation_text=f" Mean {mean_err:+,.0f}",
         annotation_position="top right",
         annotation_font_color="#f38ba8",
@@ -429,9 +476,15 @@ with col_e:
     st.plotly_chart(fig_hist, use_container_width=True)
 
 with col_f:
-    remote_order = [REMOTE_LABELS[r] for r in sorted(REMOTE_LABELS) if REMOTE_LABELS[r] in df["remote_label"].values]
+    remote_order = [
+        REMOTE_LABELS[r]
+        for r in sorted(REMOTE_LABELS)
+        if REMOTE_LABELS[r] in df["remote_label"].values
+    ]
     fig_remote = grouped_bar(
-        df, "remote_label", "Mean Salary by Remote Arrangement",
+        df,
+        "remote_label",
+        "Mean Salary by Remote Arrangement",
         order=remote_order,
     )
     st.plotly_chart(fig_remote, use_container_width=True)

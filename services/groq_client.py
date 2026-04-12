@@ -4,9 +4,9 @@ Groq client helpers for salary analysis.
 
 import json
 import os
+from pathlib import Path
 
 from groq import Groq
-from pathlib import Path
 
 GROQ_MODEL = "llama-3.3-70b-versatile"
 

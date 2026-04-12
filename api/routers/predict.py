@@ -3,7 +3,7 @@ Salary predictor router. Hit the /predict endpoint with the data science job
 parameters to get a predicted value for the salary.
 
 There is also a dummy /health endpoint to check the server is running.
-""" 
+"""
 
 from fastapi import APIRouter, HTTPException
 
@@ -11,6 +11,7 @@ from .. import ml_model as model
 from ..schemas.schema import PredictRequest, PredictResponse
 
 router = APIRouter(prefix="/predict")
+
 
 @router.on_event("startup")
 def startup():

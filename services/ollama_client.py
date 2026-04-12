@@ -6,8 +6,9 @@ import json
 import sys
 import threading
 import time
-import httpx
 from pathlib import Path
+
+import httpx
 
 OLLAMA_URL = "http://localhost:11434"
 OLLAMA_MODEL = "llama3.2"
@@ -60,7 +61,9 @@ def analyse_predictions(results: list[dict]) -> str:
         while not done.wait(timeout=1.0):
             elapsed = int(time.monotonic() - start)
             remaining = int(OLLAMA_TIMEOUT) - elapsed
-            sys.stdout.write(f"\r  Waiting for LLM... {elapsed}s elapsed, {remaining}s remaining  ")
+            sys.stdout.write(
+                f"\r  Waiting for LLM... {elapsed}s elapsed, {remaining}s remaining  "
+            )
             sys.stdout.flush()
         sys.stdout.write("\r" + " " * 60 + "\r")
         sys.stdout.flush()
@@ -68,7 +71,9 @@ def analyse_predictions(results: list[dict]) -> str:
     progress_thread = threading.Thread(target=_progress, daemon=True)
     progress_thread.start()
     try:
-        response = httpx.post(f"{OLLAMA_URL}/api/chat", json=payload, timeout=OLLAMA_TIMEOUT)
+        response = httpx.post(
+            f"{OLLAMA_URL}/api/chat", json=payload, timeout=OLLAMA_TIMEOUT
+        )
     finally:
         done.set()
         progress_thread.join()

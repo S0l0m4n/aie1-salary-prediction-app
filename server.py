@@ -14,6 +14,7 @@ app = FastAPI(title="Salary Prediction API")
 # predict.py router file
 app.include_router(predict.router)
 
+
 # A sanity health check
 @app.get("/health")
 def health():

@@ -15,14 +15,15 @@ which is read by the Streamlit dashboard.
 """
 
 import argparse
+import csv
 import os
 import sys
-import csv
 from pathlib import Path
 
-from dotenv import load_dotenv
 import httpx
+from dotenv import load_dotenv
 from supabase import create_client
+
 from services import groq_client as llm_client
 
 load_dotenv()
@@ -45,9 +46,15 @@ def get_envs() -> dict:
         sys.exit(1)
     return envs
 
+
 PREDICT_FIELDS = {
-    "work_year", "experience_level", "job_title",
-    "remote_ratio", "company_location", "company_size", "is_abroad",
+    "work_year",
+    "experience_level",
+    "job_title",
+    "remote_ratio",
+    "company_location",
+    "company_size",
+    "is_abroad",
 }
 
 
@@ -62,7 +69,11 @@ def load_csv(path: Path) -> list[dict]:
                 row["work_year"] = int(row["work_year"])
                 row["remote_ratio"] = int(row["remote_ratio"])
                 row["salary_in_usd"] = int(row["salary_in_usd"])
-                row["is_abroad"] = row["is_abroad"].strip().lower() in ("true", "1", "yes")
+                row["is_abroad"] = row["is_abroad"].strip().lower() in (
+                    "true",
+                    "1",
+                    "yes",
+                )
             except (KeyError, ValueError) as e:
                 print(f"Warning: skipping row {i} due to parse error: {e}")
                 continue
@@ -80,15 +91,19 @@ def get_predictions(rows: list[dict]) -> list[dict]:
             response.raise_for_status()
             predicted = response.json()["predicted_salary_usd"]
             error = predicted - row["salary_in_usd"]
-            results.append({
-                **row,
-                "predicted_salary_usd": predicted,
-                "error_usd": error,
-            })
-            print(f"  [{i:2d}/{len(rows)}] {row['job_title']:35s}  "
-                  f"predicted: ${predicted:>9,}  "
-                  f"actual: ${row['salary_in_usd']:>9,}  "
-                  f"error: ${error:>+9,}")
+            results.append(
+                {
+                    **row,
+                    "predicted_salary_usd": predicted,
+                    "error_usd": error,
+                }
+            )
+            print(
+                f"  [{i:2d}/{len(rows)}] {row['job_title']:35s}  "
+                f"predicted: ${predicted:>9,}  "
+                f"actual: ${row['salary_in_usd']:>9,}  "
+                f"error: ${error:>+9,}"
+            )
     return results
 
 
@@ -103,11 +118,13 @@ def write_results_csv(results: list[dict], out_path: Path) -> None:
         writer.writerows(results)
     print(f"Predictions saved to {out_path}")
 
+
 def write_results_db(results: list[dict], db_url: str, key: str, table: str) -> None:
     """Insert prediction results into the Supabase table."""
     client = create_client(db_url, key)
     client.table(table).insert(results).execute()
     print(f"Predictions saved to Supabase table '{table}' ({len(results)} rows)")
+
 
 def main():
     root = Path(__file__).parent
@@ -115,13 +132,29 @@ def main():
     envs = get_envs()
     default_csv = root / envs["input_data_csv"]
 
-    parser = argparse.ArgumentParser(description="Run salary predictions and optional LLM analysis.")
-    parser.add_argument("csv", nargs="?", type=Path, default=default_csv,
-                        help="Change path to test data CSV")
-    parser.add_argument("--save", nargs="?", const=DEFAULT_SAVE_PATH, type=Path, metavar="PATH",
-                        help="Save predictions to CSV for the dashboard (default: data/predictions.csv)")
-    parser.add_argument("--save-db", action="store_true",
-                        help="Insert predictions into the Supabase predictions table")
+    parser = argparse.ArgumentParser(
+        description="Run salary predictions and optional LLM analysis."
+    )
+    parser.add_argument(
+        "csv",
+        nargs="?",
+        type=Path,
+        default=default_csv,
+        help="Change path to test data CSV",
+    )
+    parser.add_argument(
+        "--save",
+        nargs="?",
+        const=DEFAULT_SAVE_PATH,
+        type=Path,
+        metavar="PATH",
+        help="Save predictions to CSV for the dashboard (default: data/predictions.csv)",
+    )
+    parser.add_argument(
+        "--save-db",
+        action="store_true",
+        help="Insert predictions into the Supabase predictions table",
+    )
     args = parser.parse_args()
 
     csv_path = args.csv
